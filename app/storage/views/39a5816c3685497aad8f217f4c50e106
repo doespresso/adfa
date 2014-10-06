@@ -5,7 +5,7 @@
     <div class="plabel">опубликовано в издании</div>
     <div class="pmag">«<?php echo $pr->publication->first()->magazin->title; ?>»</div>
     <?php endif; ?>
-       <?php if(!empty($pr->publication->first()->number)): ?><div class="pnamber"><span class="number">№<?php echo $pr->publication->first()->number; ?></span> <span class="year"><?php echo $pr->publication->first()->year; ?></span></div><?php endif; ?>
+       <?php if(!empty($pr->publication->first()->number)): ?><div class="pnumber"><span class="number">№<?php echo $pr->publication->first()->number; ?></span> <span class="year"><?php echo $pr->publication->first()->year; ?></span></div><?php endif; ?>
     <?php endif; ?>
 </div>
 <?php endif; ?>

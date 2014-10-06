@@ -12,22 +12,14 @@
 @section('content')
 
 <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-6">
-        <p class="content qrcode">{{Setting::get('contact.qr');}}</p>
+    <div class="col-md-12 col-sm-12">
+        <div class="content">
+        <p>{{Setting::get('contact.phone');}} / {{Setting::get('contact.address');}}<br/>{{Setting::get('contact.e-mail');}}</p>
+        <p class="qrcode">{{Setting::get('contact.qr');}}</p>
+        </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="content">
-            {{Setting::get('contact.address');}}<br/>
-            {{Setting::get('contact.phone');}}
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="content">
-            {{Setting::get('contact.e-mail');}}
-        </div>
-    </div>
+<div class="col-md-12">
 </div>
 @include('partial.subfooter-index')
 @stop
