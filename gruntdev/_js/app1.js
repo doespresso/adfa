@@ -120,15 +120,15 @@ yepnope([
 //                        $("#main-loader").addClass("removed");
 //                    },1000);
 //                });
-                var im = $("body").find("[data-src]").css('display','none');
+                var im = $("body").find("[data-src]").css("opacity","0");
                     var preloaded = 0,
                     started = false;
 
-                $.preload(im, 2, function () {
+                $.preload(im, 1, function () {
                     preloaded++;
                     console.log($(this).data("src"));
-                    $(this).css("background-image",'url(' + $(this).data("src") + ')').fadeIn(100);
-                    if ((preloaded > 2 || preloaded > im.length/2) && !started) {
+                    $(this).css("background-image",'url(' + $(this).data("src") + ')').css("opacity","1");;
+                    if ((preloaded > 3 || preloaded > im.length/2) && !started) {
                         started = true;
                         console.log("GO");
                         setTimeout(function () {
