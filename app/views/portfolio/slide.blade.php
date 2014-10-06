@@ -13,5 +13,5 @@
             </figure>
         </div>
     </div>
-    <a href="{{asset('portfolio/'.$holder->alias)}}" class="slide-wrapper" style="background-image:url({{asset($holder->photos()->orderBy('sort')->first()->img_big)}})"></a>
+    <a href="{{asset('portfolio/'.$holder->alias)}}" class="slide-wrapper" data-src="{{asset($holder->photos()->orderBy('sort')->first()->img_big)}}" style="background-image:url({{asset($holder->photos()->orderBy('sort')->first()->img_big)}})"></a>
 </div>

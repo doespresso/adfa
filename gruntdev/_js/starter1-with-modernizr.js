@@ -969,28 +969,26 @@ yepnope([
 //
             'ipreload': function (url, result, key) {
                 console.log("ipreload");
-//                $('[data-src]').preload(function(){
-//                    console.log("images loaded");
-//                    setTimeout(function () {
-//                        $("#main-loader").addClass("removed");
-//                    },1000);
-//                });
-                var im = $("body").find("[data-src]").css("opacity","0");
-                    var preloaded = 0,
-                    started = false;
+////                $('[data-src]').preload(function(){
+////                    console.log("images loaded");
+////                    setTimeout(function () {
+////                        $("#main-loader").addClass("removed");
+////                    },1000);
+////                });
+//                var im = $("body").find("[data-src]");
+//                    var preloaded = 0,
+//                    started = false;
+//
+//                $.preload(im, 1, function () {
+//                    preloaded++;
+//                    console.log($(this).data("src"));
+//                    $(this).css("background-image",'url(' + $(this).data("src") + ')');
+//                    if ((preloaded > 3 || preloaded > im.length/2) && !started) {
+//                        started = true;
+//                        console.log("GO");
 
-                $.preload(im, 1, function () {
-                    preloaded++;
-                    console.log($(this).data("src"));
-                    $(this).css("background-image",'url(' + $(this).data("src") + ')').css("opacity","1");;
-                    if ((preloaded > 3 || preloaded > im.length/2) && !started) {
-                        started = true;
-                        console.log("GO");
-                        setTimeout(function () {
-                            $("#main-loader").addClass("removed");
-                        }, 1000);
-                    }
-                });
+//                    }
+//                });
             },
 
             'ilightbox': function (url, result, key) {
@@ -1115,14 +1113,17 @@ yepnope([
 
             'swiper': function (url, result, key) {
 
+                setTimeout(function () {
+                    $("#main-loader").addClass("removed");
+                }, 1000);
 
-                function fader(el) {
-                    el.fadeIn(100);
-                    setTimeout(function () {
-                        el.fadeOut(500);
-                    }, 600);
-                    return true;
-                }
+//                function fader(el) {
+//                    el.fadeIn(100);
+//                    setTimeout(function () {
+//                        el.fadeOut(500);
+//                    }, 600);
+//                    return true;
+//                }
 
                 if ($("body").find(".photos").length > 0) {
                     var photos = new Swiper('.photos .swiper-container', {
