@@ -1183,6 +1183,7 @@ yepnope([
                         },
                         onFirstInit: function (swiper) {
                             console.log("first init wide");
+                            swiper.stopAutoplay();
                             $(".photos-wide").addClass("inited");
 //                            $(".slide-counter-page>#t-slide").text(swiper.slides.length);
 //                            $(".slide-counter-page>#c-slide").text(swiper.activeIndex+1);
@@ -1250,6 +1251,10 @@ yepnope([
                             if (!act.isActive()) {
                                 swiper.swipeTo(swiper.clickedSlideIndex);
                             }
+                        },
+                        onFirstInit: function (swiper) {
+                            console.log("first init wide");
+                            swiper.stopAutoplay();
                         },
 //
 //                        onProgressChange: function (swiper) {
