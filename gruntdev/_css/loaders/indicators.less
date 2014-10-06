@@ -1,0 +1,20 @@
+.loadprocess{
+  background-color:@gray-lighter;
+//  background-image:none!important;
+  &::before{
+    content:'';
+    left:50%;
+    top:50%;
+    position:absolute;
+    z-index:100;
+    width:30px;
+    height:30px;
+    margin-left:-15px;
+    margin-right:-15px;
+    background-color:red;
+  }
+}
+
+.lazy-hidden{
+  .loadprocess;
+}

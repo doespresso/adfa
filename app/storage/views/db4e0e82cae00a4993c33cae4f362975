@@ -1,0 +1,18 @@
+<?php $__env->startSection('page-subheader'); ?>
+<?php echo $__env->make('partial.subheader-home', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('slider'); ?>
+<?php echo $__env->make('home.slider', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('designers'); ?>
+<?php echo $__env->make('person.home', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('content.simple', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,1 @@
+<div class="content"><h1><span>{{$title}}</span></h1></div>

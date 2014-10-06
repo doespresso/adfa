@@ -1,0 +1,28 @@
+<?php $__env->startSection('filter'); ?><?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('page-subheader'); ?>
+<?php echo $__env->make('partial.subheader-index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('slider'); ?><?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div class="row portfolio-grid" id="shuffle">
+    <?php foreach($portfolios as $portfolio): ?>
+    <a href="<?php echo asset(''); ?><?php echo Request::segment(1); ?>/<?php echo $portfolio->alias; ?>" class="item"
+       data-groups='["all", "<?php echo $portfolio->style->title; ?>"]'
+       data-src="<?php echo $portfolio->photos()->orderBy('sort')->first()->img_orig; ?>"
+       data-tmb="<?php echo $portfolio->photos()->orderBy('sort')->first()->img_thumb; ?>"
+       style="background-image:url(<?php echo $portfolio->photos()->orderBy('sort')->first()->img_medium; ?>)">
+            <h3 class="title"><span><?php echo $portfolio->title; ?></span></h3>
+            <?php if($portfolio->photos()->orderBy('sort')->first()): ?>
+            <?php $pr = $portfolio?>
+            <?php echo $__env->make('partial.published-small', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endif; ?>
+    </a>
+    <?php endforeach; ?>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('content.simple', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

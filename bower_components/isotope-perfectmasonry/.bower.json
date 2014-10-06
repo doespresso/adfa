@@ -1,0 +1,14 @@
+{
+  "name": "isotope-perfectmasonry",
+  "homepage": "https://github.com/zonear/isotope-perfectmasonry",
+  "_release": "d7bbb98354",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d7bbb983546351f7723b74e941f0cd57eda50cce"
+  },
+  "_source": "git://github.com/zonear/isotope-perfectmasonry.git",
+  "_target": "*",
+  "_originalSource": "isotope-perfectmasonry",
+  "_direct": true
+}

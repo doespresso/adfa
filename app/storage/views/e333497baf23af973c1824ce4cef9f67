@@ -1,0 +1,2 @@
+
+<ul id="filter"><li><a class="active" href="#" data-group="all"><span>все стили</span></a></li><?php foreach($styles as $style): ?><li><a href="#" data-group="<?php echo $style->title; ?>"><span><?php echo $style->title; ?></span></a></li><?php endforeach; ?></ul>

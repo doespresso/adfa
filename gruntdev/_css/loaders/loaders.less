@@ -1,0 +1,236 @@
+@size:300px;
+@keyframes r360 {
+  from {
+    .rotate(0deg);
+  }
+  to {
+    .rotate(360deg);
+  }
+}
+@-webkit-keyframes r360 {
+  from {
+    .rotate(0deg);
+  }
+  to {
+    .rotate(360deg);
+  }
+}
+
+//@-webkit-keyframes aframe {
+//  0% {
+//    opacity: 0;
+//    -webkit-transform: translateX(-200px);
+//    transform: translateX(-200px);
+//  }
+//
+//  100% {
+//    opacity: 1;
+//    -webkit-transform: translateX(0);
+//    transform: translateX(0);
+//  }
+//}
+//@keyframes aframe {
+//  0% {
+////    opacity: 0;
+//    -webkit-transform: translateX(-200px);
+//    -ms-transform: translateX(-200px);
+//    transform: translateX(-200px);
+//  }
+//
+//  100% {
+////    opacity: 1;
+//    -webkit-transform: translateX(0);
+//    -ms-transform: translateX(0);
+//    transform: translateX(0);
+//  }
+//}
+
+@-webkit-keyframes l100 {
+  0% {
+    -webkit-transform: translateX(@size/2);
+    transform: translateX(@size/2);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes l100 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(@size/2);
+    -ms-transform: translateX(@size/2);
+    transform: translateX(@size/2);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+
+
+@-webkit-keyframes r100 {
+  0% {
+    -webkit-transform: translateX(-@size/2);
+    transform: translateX(-@size/2);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes r100 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-@size/2);
+    -ms-transform: translateX(-@size/2);
+    transform: translateX(-@size/2);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+
+
+//.aframe {
+//  -webkit-animation-name: aframe;
+//  animation-name: aframe;
+//  .animation-name(aframe);
+//  .animation-timing-function(ease);
+//  .animation-duration(1s);
+//  .animation-direction(alternate);
+////  .animation-iteration-count(infinite);
+//  .animation-fill-mode(both);
+////  .transition(1.5s);
+//}
+
+@-webkit-keyframes aframe {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes aframe {
+  0% {
+    //    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    //    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+
+
+#main-loader{
+position:fixed;
+left:0;
+top:0;
+z-index:10;
+//display:none;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+//.opacity(0);
+width:100%;
+height:100%;
+background-color: @gray-lighter;
+  .naming{
+    font-size:11px;
+    position:fixed;
+    left:@padl*2;
+    top:@padl*2;
+    max-width:200px;
+    &::before{
+      content:'artdefacto - бюро интерьера Михайловой и Куценко'
+    }
+    @media(min-width:@screen-sm){
+      left:@padl*8;
+      top:@padl*7;
+    }
+  }
+  .indicator{
+//background:red;
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:@size;//@size;
+    height:@size; //@size;
+    margin-top:-@size/2;
+    margin-left:-@size/2;
+    display:block;
+    text-align:center;
+//    #bg-contain();
+//    background-image:url('/assets/logo/adfwa.svg');
+    svg{
+      width:@size;
+      height:@size;
+      *{
+        fill:@gray-darker;
+      }
+
+    }
+    #a{
+      .animation-name(l100);
+      .animation-timing-function(ease);
+      .animation-duration(1.5s);
+      .animation-direction(alternate);
+      .animation-iteration-count(infinite);
+      .animation-fill-mode(both);
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+//      .transform-origin(50% 50%);
+    }
+    #f{
+      .animation-name(r100);
+      .animation-timing-function(ease);
+      .animation-duration(1.5s);
+      .animation-direction(alternate);
+      .animation-iteration-count(infinite);
+      .animation-fill-mode(both);
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+//      .transform-origin(50% 50%);
+    }
+  }
+  .transition(1s);
+  &.loading{
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+//   .opacity(1);
+  }
+  &.removed{
+          -webkit-transform: translateX(-3000px);
+          -ms-transform: translateX(-3000px);
+          transform: translateX(-3000px);
+  }
+}
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><?php echo $brand; ?></title>
+    <?php echo $assets->styles(); ?>
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="<?php echo $brand_url; ?>" class="navbar-brand"><?php echo $brand; ?></a>
+            </div>
+
+            <div class="navbar-collapse">
+                <?php echo $menu->render($mainMenu); ?>
+
+
+                <?php if($serviceMenu): ?>
+                    <?php echo $menu->render($serviceMenu, 'nav navbar-nav navbar-right'); ?>
+
+                <?php endif; ?>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content" id="content"><?php echo $__env->yieldContent('content', $content); ?></div>
+
+    <script>
+    Cruddy = <?php echo $cruddyJSON; ?>;
+    Cruddy.root = '<?php echo Request::root(); ?>';
+    Cruddy.baseUrl = '<?php echo Request::getBaseUrl(); ?>';
+    </script>
+
+    <?php echo $assets->scripts(); ?>
+
+</body>
+</html>

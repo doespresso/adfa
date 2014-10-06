@@ -1,0 +1,35 @@
+<?php $__env->startSection('filter'); ?><?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('page-subheader'); ?>
+<?php echo $__env->make('partial.subheader-index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('slider'); ?><?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-6">
+        <p class="content qrcode"><?php echo Setting::get('contact.qr');; ?></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="content">
+            <?php echo Setting::get('contact.address');; ?><br/>
+            <?php echo Setting::get('contact.phone');; ?>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="content">
+            <?php echo Setting::get('contact.e-mail');; ?>
+
+        </div>
+    </div>
+</div>
+<?php echo $__env->make('partial.subfooter-index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('content.simple', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

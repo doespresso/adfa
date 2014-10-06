@@ -1,0 +1,39 @@
+<?php if($slides): ?>
+<div class="col-md-12 col-md-offset-0">
+    <div class="spotlight" id="presentation">
+        <div class="swiper-container l-arrows" id="main-swiper">
+            <div class="swiper-wrapper">
+                <?php foreach($slides as $slide): ?>
+                <?php
+                $obj = get_class($slide->holder);
+                $holder = $slide->holder;
+                if ($slide->israndom && $slide->holder_type == 'Person') {
+                    $holder = Person::random()->active()->first();
+                }
+                if ($slide->israndom && $slide->holder_type == 'Post') {
+                    $holder = Post::random()->active()->first();
+                }
+                if ($slide->israndom && $slide->holder_type == 'Portfolio'){
+                    $holder = Portfolio::random()->active()->first();
+                }
+                ?>
+
+                <?php if($obj == 'Portfolio'): ?>
+                <?php echo $__env->make('portfolio.slide', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php elseif($obj == 'Post'): ?>
+                <?php echo $__env->make('post.slide-crop', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php elseif($obj == 'Person'): ?>
+                <?php echo $__env->make('person.slide', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+
+                <?php endforeach; ?>
+
+            </div>
+            <div id="paging" class="swiper-pagination hidden"></div>
+            <figure class="ui-arrow-next ui-arrow" id="presentation-next"></figure>
+            <figure class="ui-arrow-prev ui-arrow" id="presentation-prev"></figure>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+

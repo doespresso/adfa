@@ -1,0 +1,28 @@
+php artisan generate:migration create_menus_table
+--fields="title:string, cat_id:integer:nullable, url:string:nullable, alt:string:nullable, active:smallInteger:default(1), sort:integer:default(100)"
+
+php artisan generate:migration create_posts_table --fields="title:string, cat_id:integer:nullable, alias:string:nullable:unique, alt:string:nullable, active:smallInteger:default(1), sort:integer:default(100)"
+
+php artisan generate:migration create_metas_table --fields="title:string:nullable, keywords:string:nullable, description:string:nullable"
+
+php artisan generate:migration create_styles_table --fields="title:string, description:text:nullable"
+
+
+php artisan generate:migration create_portfolios_table --fields="title:string, description:text:nullable, style_id:integer, active:smallInteger:default(1), sort:integer:default(100)"
+
+
+php artisan generate:migration create_photos_table --fields="description:string:nullable, img:string:nullable, img_orig:string:nullable, img_small:string:nullable, active:smallInteger:default(1), sort:integer:default(100)"
+
+php artisan generate:migration create_pages_table --fields="title:string, content:text:nullable, alias:string:nullable, active:smallInteger:default(1), sort:integer:default(100)"
+
+
+
+
+php artisan generate:migration create_magazins_table --fields="title:string, description:text:nullable, logo:string:nullable, logo_inv:string:nullable, active:smallInteger:default(1), sort:integer:default(100)"
+
+php artisan generate:migration create_publications_table --fields="magazin_id:integer, title:string, description:text:nullable, year:integer, number:integer, active:smallInteger:default(1), sort:integer:default(100)"
+
+php artisan generate:migration create_aliases_table --fields="url:string:unique"
+
+php artisan generate:migration create_pics_table --fields="url:string"
+php artisan generate:migration create_galleries_table --fields="tittle:string:nullable"
