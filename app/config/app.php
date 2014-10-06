@@ -29,7 +29,7 @@ return array(
 	*/
 
 //	'url' => $_SERVER['HTTP_HOST'],
-    'url' => 'localhost',
+//    'url' => 'localhost',
 //    'asset_url' => $_SERVER['HTTP_HOST'].'/assets',
 //    'asset_url' => 'localhost/assets',
 
