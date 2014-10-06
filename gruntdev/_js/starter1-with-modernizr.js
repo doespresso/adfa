@@ -1131,6 +1131,9 @@ yepnope([
                         slidesPerView: '1.7',
 //                        loop: true,
                         centeredSlides: true,
+                        onSwiperCreated: function (swiper) {
+                            swiper.stopAutoplay();
+                        },
                         onFirstInit: function (swiper) {
                             $(".slide-counter-page>#t-slide").text(swiper.slides.length);
                             $(".slide-counter-page>#c-slide").text(swiper.activeIndex + 1);
@@ -1195,11 +1198,11 @@ yepnope([
                         },
 
                         onSwiperCreated: function (swiper) {
-
+                            swiper.stopAutoplay();
                         },
                         onFirstInit: function (swiper) {
                             console.log("first init wide");
-                            swiper.stopAutoplay();
+
                             $(".photos-wide").addClass("inited");
 //                            $(".slide-counter-page>#t-slide").text(swiper.slides.length);
 //                            $(".slide-counter-page>#c-slide").text(swiper.activeIndex+1);
@@ -1263,6 +1266,9 @@ yepnope([
                         pagination: "#paging",
                         createPagination: true,
                         paginationClickable: true,
+                        onSwiperCreated: function (swiper) {
+                            swiper.stopAutoplay();
+                        },
                         onSlideClick: function (swiper) {
                             var act = swiper.clickedSlide;
                             console.log(act);
@@ -1272,7 +1278,6 @@ yepnope([
                         },
                         onFirstInit: function (swiper) {
                             console.log("first init wide");
-                            swiper.stopAutoplay();
                         },
 //
 //                        onProgressChange: function (swiper) {

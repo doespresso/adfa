@@ -120,14 +120,14 @@ yepnope([
 //                        $("#main-loader").addClass("removed");
 //                    },1000);
 //                });
-                var im = $("body").find("[data-src]").css("opacity","0");
+                var im = $("body").find("[data-src]");
                     var preloaded = 0,
                     started = false;
 
                 $.preload(im, 1, function () {
                     preloaded++;
                     console.log($(this).data("src"));
-                    $(this).css("background-image",'url(' + $(this).data("src") + ')').css("opacity","1");;
+                    $(this).css("background-image",'url(' + $(this).data("src") + ')');
                     if ((preloaded > 3 || preloaded > im.length/2) && !started) {
                         started = true;
                         console.log("GO");
@@ -276,6 +276,9 @@ yepnope([
                         slidesPerView: '1.7',
 //                        loop: true,
                         centeredSlides: true,
+                        onSwiperCreated: function (swiper) {
+                            swiper.stopAutoplay();
+                        },
                         onFirstInit: function (swiper) {
                             $(".slide-counter-page>#t-slide").text(swiper.slides.length);
                             $(".slide-counter-page>#c-slide").text(swiper.activeIndex + 1);
@@ -340,11 +343,11 @@ yepnope([
                         },
 
                         onSwiperCreated: function (swiper) {
-
+                            swiper.stopAutoplay();
                         },
                         onFirstInit: function (swiper) {
                             console.log("first init wide");
-                            swiper.stopAutoplay();
+
                             $(".photos-wide").addClass("inited");
 //                            $(".slide-counter-page>#t-slide").text(swiper.slides.length);
 //                            $(".slide-counter-page>#c-slide").text(swiper.activeIndex+1);
@@ -408,6 +411,9 @@ yepnope([
                         pagination: "#paging",
                         createPagination: true,
                         paginationClickable: true,
+                        onSwiperCreated: function (swiper) {
+                            swiper.stopAutoplay();
+                        },
                         onSlideClick: function (swiper) {
                             var act = swiper.clickedSlide;
                             console.log(act);
@@ -417,7 +423,6 @@ yepnope([
                         },
                         onFirstInit: function (swiper) {
                             console.log("first init wide");
-                            swiper.stopAutoplay();
                         },
 //
 //                        onProgressChange: function (swiper) {

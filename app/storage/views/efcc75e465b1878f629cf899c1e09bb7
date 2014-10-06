@@ -9,11 +9,7 @@
 <?php $__env->startSection('content'); ?>
 <div class="row portfolio-grid" id="shuffle">
     <?php foreach($portfolios as $portfolio): ?>
-    <a href="<?php echo asset(''); ?><?php echo Request::segment(1); ?>/<?php echo $portfolio->alias; ?>" class="item"
-       data-groups='["all", "<?php echo $portfolio->style->title; ?>"]'
-       data-src="<?php echo $portfolio->photos()->orderBy('sort')->first()->img_orig; ?>"
-       data-tmb="<?php echo $portfolio->photos()->orderBy('sort')->first()->img_thumb; ?>"
-       style="background-image:url(<?php echo $portfolio->photos()->orderBy('sort')->first()->img_medium; ?>)">
+    <a href="<?php echo asset(''); ?><?php echo Request::segment(1); ?>/<?php echo $portfolio->alias; ?>" class="item" data-groups='["all", "<?php echo $portfolio->style->title; ?>"]' data-src="<?php echo $portfolio->photos()->orderBy('sort')->first()->img_medium; ?>">
             <h3 class="title"><span><?php echo $portfolio->title; ?></span></h3>
             <?php if($portfolio->photos()->orderBy('sort')->first()): ?>
             <?php $pr = $portfolio?>
