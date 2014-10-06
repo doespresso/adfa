@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
+        "phpseclib/phpseclib": "dev-master",
 		"kalnoy/cruddy": "dev-master@dev",
         "way/generators": "2.*",
         "fzaninotto/faker": "1.4.*@dev",
