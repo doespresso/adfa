@@ -11,7 +11,7 @@
     'dashboard' => 'cruddy::dashboard',
 
     // The URI that is prefixed to all routes of Cruddy.
-    'uri' => 'backend',
+    'uri' => '___end',
 
     // The permissions driver.
     'permissions' => 'stub',
