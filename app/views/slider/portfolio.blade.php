@@ -5,7 +5,7 @@
             @foreach ($photos as $photo)
             <div class="swiper-slide">
                 <div class="slide-wrapper">
-                    <div class="img" data-bg="{{asset($photo->img_big)}}" style="background-image:url({{asset($photo->img_big)}})"></div>
+                    <div class="img" data-bg="{{asset($photo->img_big)}}" style="background-image:url({{asset($photo->img_big)}})" data-src="background-image:url({{asset($photo->img_big)}})"></div>
                 </div>
             </div>
             @endforeach
