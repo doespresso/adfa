@@ -2,7 +2,9 @@ var sliding_speed = 500,
     sl_progress = true,
     short = false,
     reinittimeout,
-    grid;
+    grid,
+    gallery,
+    presentation;
 
 //yepnope.injectCss(['dev/component/odometer/themes/odometer-theme-minimal.css']);
 
@@ -41,6 +43,7 @@ yepnope([
         load: {
             'jquery': ''+'/assets/js/app/jquery.js',
             'ipreload': ''+'/assets/js/app/ipreload.js',
+            'ilightbox': ''+'/assets/js/app/ilightbox.js',
 //            'llxt': ''+'/assets/js/app/llxt.js',
 //            'llxtbg': ''+'/assets/js/app/llxtbg.js',
             'shuffle': ''+'/assets/js/app/shuffle.js',
@@ -118,6 +121,88 @@ yepnope([
                         $("#main-loader").addClass("removed");
                     },1000);
                 });
+            },
+
+            'ilightbox':function (url, result, key) {
+
+                var activityIndicatorOn = function () {
+                        $('<div id="imagelightbox-loading"><div></div></div>').appendTo('body');
+                    },
+                    activityIndicatorOff = function () {
+                        $('#imagelightbox-loading').remove();
+                    },
+                    overlayOn = function () {
+                        $('<div id="imagelightbox-overlay"></div>').appendTo('body');
+                    },
+                    overlayOff = function () {
+                        $('#imagelightbox-overlay').remove();
+                    },
+                    closeButtonOn = function (instance) {
+                        $('<a href="#" id="imagelightbox-close">Close</a>').appendTo('body').on('click', function () {
+                            $(this).remove();
+                            instance.quitImageLightbox();
+                            return false;
+                        });
+                    },
+                    closeButtonOff = function () {
+                        $('#imagelightbox-close').remove();
+                    },
+                    navigationOn = function (instance, selector) {
+                        var images = $(selector);
+                        if (images.length) {
+                            var nav = $('<div id="imagelightbox-nav"></div>');
+                            for (var i = 0; i < images.length; i++)
+                                nav.append('<a href="#"></a>');
+
+                            nav.appendTo('body');
+                            nav.on('click touchend', function () {
+                                return false;
+                            });
+
+                            var navItems = nav.find('a');
+                            navItems.on('click touchend', function () {
+                                var $this = $(this);
+                                if (images.eq($this.index()).attr('href') != $('#imagelightbox').attr('src'))
+                                    instance.switchImageLightbox($this.index());
+
+                                navItems.removeClass('active');
+                                navItems.eq($this.index()).addClass('active');
+
+                                return false;
+                            })
+                                .on('touchend', function () {
+                                    return false;
+                                });
+                        }
+                    },
+                    navigationUpdate = function (selector) {
+                        var items = $('#imagelightbox-nav a');
+                        items.removeClass('active');
+                        items.eq($(selector).filter('[href="' + $('#imagelightbox').attr('src') + '"]').index(selector)).addClass('active');
+                    },
+                    navigationOff = function () {
+                        $('#imagelightbox-nav').remove();
+                    };
+
+
+
+                $('a[rel="imagelightbox"]').imageLightbox(
+                    {
+                        onStart:function() {
+                            overlayOn();
+                            gallery.stopAutoplay();
+                        },
+                        onLoadStart:function () {
+                            activityIndicatorOn();
+                        },
+                        onLoadEnd:function () {
+                            activityIndicatorOff();
+                        },
+                        onEnd:function () {
+                            activityIndicatorOff(); overlayOff();
+                        }
+                    });
+
             },
 
             'shuffle': function (url, result, key) {
@@ -217,7 +302,7 @@ yepnope([
                 }
 
                 if ($("body").find(".photos-wide").length > 0) {
-                    var gallery = new Swiper('.photos-wide .swiper-container', {
+                    gallery = new Swiper('.photos-wide .swiper-container', {
                         mode: 'horizontal',
 //                        slidesPerViewFit: 2,
                         loop: false,
@@ -289,7 +374,7 @@ yepnope([
                 }
 
                 if ($("body").find("#presentation").length > 0) {
-                    var presentation = new Swiper('#main-swiper', {
+                    presentation = new Swiper('#main-swiper', {
                         mode: 'horizontal',
                         slidesPerViewFit: false,
                         loop: true,
