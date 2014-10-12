@@ -20,7 +20,7 @@
 @section('content')
 <div class="row" id="portfolio-elem">
     <div class="row">
-        <div class="col-md-8 col-sm-12">
+        <div class="col-md-12 col-lg-8 col-sm-12">
             <div class="content">
                 @if(!empty($portfolio->preambula))<div class="preambula">{{$portfolio->preambula}}</div>@endif
                 @if(!empty($portfolio->description)){{$portfolio->description}}@endif

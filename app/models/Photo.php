@@ -98,19 +98,19 @@ Photo::saving(function ($model) {
         $img_big = Image::make($model->img_orig)->resize(1900, null, function ($constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();
-        })->save(public_path($newname . '_big.jpg'));
+        })->sharpen(10)->encode(null, 100)->save(public_path($newname . '_big.jpg'));
         $img_medium = Image::make($model->img_orig)->resize(null, 700, function ($constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();
-        })->save(public_path($newname . '_medium.jpg'));
+        })->sharpen(10)->encode(null, 100)->save(public_path($newname . '_medium.jpg'));
         $img_small = Image::make($model->img_orig)->resize(600, null, function ($constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();
-        })->save(public_path($newname . '_small.jpg'));
+        })->sharpen(5)->encode(null, 100)->save(public_path($newname . '_small.jpg'));
         $img_thumb = Image::make($model->img_orig)->resize(400, null, function ($constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();
-        })->save(public_path($newname . '_thumb.jpg'));
+        })->sharpen(5)->encode(null, 100)->save(public_path($newname . '_thumb.jpg'));
         $model->img_big = $newname . '_big.jpg';
         $model->img_medium = $newname . '_medium.jpg';
         $model->img_small = $newname . '_small.jpg';

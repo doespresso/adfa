@@ -1,8 +1,10 @@
 #blog-grid {
   .item {
+    width:100%;
+    display:block;
+    background-color:@gray-lighter;
     h3{margin-bottom:0;}
     position: relative;
-//        .dash-bottom-left;
     margin-bottom: @gap*3;
     //    h3 {
     //      font-size: 18px;
@@ -18,10 +20,11 @@
         width: 100%;
         height: auto;
         border: 0;
+        margin-bottom:@gap*2;
       }
       overflow: hidden;
-      width: 100%;
-      display: block;
+//      width: 100%;
+//      display: block;
       #bg-cover(center center);
       //      background-color: @gray-lighter;
     }
@@ -47,9 +50,6 @@
         }
       }
       padding-bottom:@gap/2;
-    }
-    @media(min-width:@screen-sm-max){
-      max-width:600px;
     }
   }
 

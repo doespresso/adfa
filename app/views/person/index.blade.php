@@ -24,7 +24,7 @@
     </div>
     @endforeach
 </div>
-<div class="row"><h2 class="title-logo">artdefacto</h2></div>
+<div class="row"><div class="content"><h2 class="title-logo">artdefacto</h2></div></div>
 @include('partial.subfooter-index')
 
 @stop

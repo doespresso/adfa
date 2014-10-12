@@ -36,6 +36,7 @@ class SlideSchema extends BaseSchema {
         $schema->integer('sort');
         $schema->boolean('active');
         $schema->boolean('israndom')->label('Случайный');
+        $schema->boolean('light')->label('Светлый текст');
         $schema->timestamps(false);
 //        $schema->relates('holder','portfolios');
 //        $schema->relates('contenttype', 'contents')->filterOptions(function ($q)

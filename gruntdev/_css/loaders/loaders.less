@@ -1,4 +1,4 @@
-@size:300px;
+@size:280px;
 @keyframes r360 {
   from {
     .rotate(0deg);
@@ -45,7 +45,7 @@
 //  }
 //}
 
-@-webkit-keyframes l100 {
+@-webkit-keyframes r100 {
   0% {
     -webkit-transform: translateX(@size/2);
     transform: translateX(@size/2);
@@ -57,7 +57,7 @@
   }
 }
 
-@keyframes l100 {
+@keyframes r100 {
   0% {
     opacity: 0;
     -webkit-transform: translateX(@size/2);
@@ -75,7 +75,7 @@
 
 
 
-@-webkit-keyframes r100 {
+@-webkit-keyframes l100 {
   0% {
     -webkit-transform: translateX(-@size/2);
     transform: translateX(-@size/2);
@@ -87,7 +87,7 @@
   }
 }
 
-@keyframes r100 {
+@keyframes l100 {
   0% {
     opacity: 0;
     -webkit-transform: translateX(-@size/2);
@@ -191,23 +191,13 @@ background-color: @gray-lighter;
     svg{
       width:@size;
       height:@size;
+//      background-color:red;
       *{
         fill:@gray-darker;
       }
 
     }
     #a{
-      .animation-name(l100);
-      .animation-timing-function(ease);
-      .animation-duration(1.5s);
-      .animation-direction(alternate);
-      .animation-iteration-count(infinite);
-      .animation-fill-mode(both);
-      -webkit-animation-delay: 0s;
-      animation-delay: 0s;
-//      .transform-origin(50% 50%);
-    }
-    #f{
       .animation-name(r100);
       .animation-timing-function(ease);
       .animation-duration(1.5s);
@@ -216,7 +206,24 @@ background-color: @gray-lighter;
       .animation-fill-mode(both);
       -webkit-animation-delay: 0s;
       animation-delay: 0s;
-//      .transform-origin(50% 50%);
+      .transform-origin(50% 50%);
+      -webkit-transform: translateX(@size);
+      -ms-transform: translateX(@size);
+      transform: translateX(@size);
+    }
+    #f{
+      .animation-name(l100);
+      .animation-timing-function(ease);
+      .animation-duration(1.5s);
+      .animation-direction(alternate);
+      .animation-iteration-count(infinite);
+      .animation-fill-mode(both);
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+      .transform-origin(50% 50%);
+      -webkit-transform: translateX(-@size);
+      -ms-transform: translateX(-@size);
+      transform: translateX(-@size);
     }
   }
   .transition(1s);

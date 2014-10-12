@@ -10,15 +10,17 @@
 <div id="blog-grid">
     <?php foreach($posts as $post): ?>
     <div class="row item">
-            <?php if(true): ?>
-            <div class="thumb">
-                <a href="<?php echo asset(''); ?><?php echo Request::segment(1); ?>/<?php echo $post->alias; ?>"><img src="<?php echo $post->photos()->orderBy('sort')->first()->img_orig; ?>" title="<?php echo $post->title; ?>"/></a>
-            </div>
-            <?php endif; ?>
-        <div class="content">
+        <?php if(true): ?>
+        <div class="thumb col-md-6">
+            <a href="<?php echo asset(''); ?><?php echo Request::segment(1); ?>/<?php echo $post->alias; ?>"><img src="<?php echo $post->photos()->orderBy('sort')->first()->img_orig; ?>" title="<?php echo $post->title; ?>"/></a>
+        </div>
+        <?php endif; ?>
+        <div class="col-md-5 col-md-offset-1">
+            <div class="content">
             <h3><a href="<?php echo asset(''); ?><?php echo Request::segment(1); ?>/<?php echo $post->alias; ?>" title="<?php echo $post->title; ?>"><?php echo $post->title; ?></a></h3>
             <div class="text-content">
                 <p class="preambula"><a href="<?php echo asset(''); ?><?php echo Request::segment(1); ?>/<?php echo $post->alias; ?>" title="читать"><?php echo $post->preambula; ?></a></p>
+            </div>
             </div>
         </div>
     </div>

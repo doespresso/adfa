@@ -20,7 +20,7 @@
 <?php $__env->startSection('content'); ?>
 <div class="row" id="portfolio-elem">
     <div class="row">
-        <div class="col-md-8 col-sm-12">
+        <div class="col-md-12 col-lg-8 col-sm-12">
             <div class="content">
                 <?php if(!empty($portfolio->preambula)): ?><div class="preambula"><?php echo $portfolio->preambula; ?></div><?php endif; ?>
                 <?php if(!empty($portfolio->description)): ?><?php echo $portfolio->description; ?><?php endif; ?>
