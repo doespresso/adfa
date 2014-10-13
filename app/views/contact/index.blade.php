@@ -12,12 +12,11 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12 col-sm-12">
+    <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="content">
-        <p>{{Config::get('site.phone');}} / {{Config::get('site.address');}}<br/>{{Config::get('site.e-mail');}}</p>
-        <p class="qrcode">
+        <div class="qrcode">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             width="585px" height="585px" viewBox="0 0 585 585" enable-background="new 0 0 585 585" xml:space="preserve">
+             viewBox="0 0 585 585" enable-background="new 0 0 585 585" xml:space="preserve">
 <g>
 <rect y="108" width="9" height="9"/>
 <rect y="225" width="9" height="9"/>
@@ -418,11 +417,16 @@
 <rect x="576" y="441" width="9" height="9"/>
 </g>
 </svg>
-        </p>
+        </div>
+        </div>
+        </div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="content">
+        <address>{{Config::get('site.address');}}</address>
+        <phone>{{Config::get('site.phone');}}</phone>
+        <mail>{{Config::get('site.e-mail');}}</mail>
         </div>
     </div>
-</div>
-<div class="col-md-12">
 </div>
 @include('partial.subfooter-index')
 @stop

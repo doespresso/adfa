@@ -926,6 +926,11 @@ yepnope([
 //                        $("#body-bg").css('background-image', 'none');
 //                    });
 
+                    $(".century").on('click',function(e){
+                        e.preventDefault();
+                        $("*").css("font-family","Century Gothic");
+                    })
+
                     $('a[href*=#]:not([href=#])').click(function () {
                         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                             var target = $(this.hash);
