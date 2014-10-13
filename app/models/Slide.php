@@ -2,7 +2,7 @@
 
 class Slide extends \Eloquent {
 
-    protected $table = 'Slides';
+    protected $table = 'slides';
 
     public static function boot()
     {
