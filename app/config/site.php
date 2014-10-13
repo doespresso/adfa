@@ -3,7 +3,7 @@ return array(
     'sitename' => 'artdefacto',
     'siteslogan' => 'бюро интерьерв Михайловой и Куценко',
     'phone' => '+7 903 720 95 60',
-    'address'=>'Москва, ул. Дружбы 10',
+    'address'=>'Москва, ул. Дружбы 10/32',
     'e-mail'=>'info@artdefacto.ru',
     'phone_1' => '+7 903 668 68 83',
     'meta' => array(

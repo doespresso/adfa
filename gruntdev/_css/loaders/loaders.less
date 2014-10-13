@@ -16,36 +16,10 @@
   }
 }
 
-//@-webkit-keyframes aframe {
-//  0% {
-//    opacity: 0;
-//    -webkit-transform: translateX(-200px);
-//    transform: translateX(-200px);
-//  }
-//
-//  100% {
-//    opacity: 1;
-//    -webkit-transform: translateX(0);
-//    transform: translateX(0);
-//  }
-//}
-//@keyframes aframe {
-//  0% {
-////    opacity: 0;
-//    -webkit-transform: translateX(-200px);
-//    -ms-transform: translateX(-200px);
-//    transform: translateX(-200px);
-//  }
-//
-//  100% {
-////    opacity: 1;
-//    -webkit-transform: translateX(0);
-//    -ms-transform: translateX(0);
-//    transform: translateX(0);
-//  }
-//}
+
 
 @-webkit-keyframes r100 {
+  @size:100px;
   0% {
     -webkit-transform: translateX(@size/2);
     transform: translateX(@size/2);
@@ -58,6 +32,7 @@
 }
 
 @keyframes r100 {
+  @size:100px;
   0% {
     opacity: 0;
     -webkit-transform: translateX(@size/2);
@@ -76,6 +51,7 @@
 
 
 @-webkit-keyframes l100 {
+  @size:100px;
   0% {
     -webkit-transform: translateX(-@size/2);
     transform: translateX(-@size/2);
@@ -88,6 +64,7 @@
 }
 
 @keyframes l100 {
+  @size:100px;
   0% {
     opacity: 0;
     -webkit-transform: translateX(-@size/2);
@@ -103,48 +80,6 @@
   }
 }
 
-
-
-//.aframe {
-//  -webkit-animation-name: aframe;
-//  animation-name: aframe;
-//  .animation-name(aframe);
-//  .animation-timing-function(ease);
-//  .animation-duration(1s);
-//  .animation-direction(alternate);
-////  .animation-iteration-count(infinite);
-//  .animation-fill-mode(both);
-////  .transition(1.5s);
-//}
-
-@-webkit-keyframes aframe {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-2000px);
-    transform: translateX(-2000px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@keyframes aframe {
-  0% {
-    //    opacity: 0;
-    -webkit-transform: translateX(-2000px);
-    -ms-transform: translateX(-2000px);
-    transform: translateX(-2000px);
-  }
-
-  100% {
-    //    opacity: 1;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
 
 
 

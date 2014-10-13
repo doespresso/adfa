@@ -8,7 +8,7 @@ class PortfolioController extends BaseController {
     public function index($params)
     {
 
-        $portfolios = Portfolio::with('publication','style','photos')->active()->orderBy('year','desc')->get();
+        $portfolios = Portfolio::with('publication','style','photos')->active()->orderBy('year','desc')->orderBy('sort')->get();
         $page = $params['page'];
         $meta = $params['meta'];
         return View::make('portfolio.index',compact('portfolios'))->with([
