@@ -3,7 +3,22 @@
     width:100%;
     display:block;
     background-color:@gray-lighter;
-    h3{margin-bottom:0;}
+    h3{
+      padding: 0;
+      margin: 0;
+      padding: 0;
+      margin: @gap 0;
+      font-weight: bold;
+      font-size: @brsize;
+      //  line-height: 1;
+      > span {
+        border-bottom: 1px solid #fff;
+        padding-bottom: @gap/4;
+        //    line-height: 1;
+      }
+
+//      margin-bottom:0;
+    }
     position: relative;
     margin-bottom: @gap*3;
     //    h3 {

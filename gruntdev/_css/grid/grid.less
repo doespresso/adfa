@@ -37,14 +37,18 @@
   z-index: 9;
   &::before {
     content: '';
-    display: block;
     width: 100%;
     height: 100%;
     background-color: #000;
+    display:none;
+    @media(min-width:@screen-sm-max){
+      display:block;
+    }
   }
 //  -webkit-transform: translateX(-2000px);
 //  -ms-transform: translateX(-2000px);
 //  transform: translateX(-2000px);
+
 }
 
 .line-top {

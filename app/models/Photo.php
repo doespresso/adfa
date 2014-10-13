@@ -92,7 +92,7 @@ Photo::saving(function ($model) {
 
     if ($model->getDirty()) {
         if ($holder) {
-            $newname = Mascame\Urlify::filter($holder) . '_' . str_random(4);
+            $newname = 'interier_'.Mascame\Urlify::filter($holder) . '_' . str_random(4);
             $newname = 'images/photos/' . $newname;
         }
         $img_big = Image::make($model->img_orig)->resize(1900, null, function ($constraint) {

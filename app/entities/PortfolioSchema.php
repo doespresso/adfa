@@ -33,6 +33,7 @@ class PortfolioSchema extends BaseSchema {
         $schema->increments('id');
         $schema->string('title');
         $schema->string('privtitle')->label('Служебное название (не отображается)');
+        $schema->integer('year')->label('Год');
         $schema->boolean('active');
         $schema->string('preambula');
         $schema->ckedit('description');
