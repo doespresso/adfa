@@ -92,21 +92,27 @@
       position: absolute;
       z-index: 4;
       left: @padl*2;
-      top: 60%;
+      top: 50%;
       color: #fff;
-      font-size:14px;
-//      display:none;
+      padding: 0;
+      margin: 0;
+      padding: 0;
+      padding-right:@gap;
+      margin: @gap 0;
+      font-weight: bold;
+      font-size: @brsize;
+      //  line-height: 1;
       span {
-        line-height: 1.7;
-        padding-bottom: 3px;
         border-bottom: 1px solid #fff;
+        padding-bottom: @gap/4;
+        //    line-height: 1;
       }
       @media (min-width: @screen-md-max) {
         display:none;
         color: @gray-darker;
         span {
-          line-height: 1.7;
-          padding-bottom: 3px;
+//          line-height: 1.7;
+//          padding-bottom: 3px;
           border-bottom: 1px solid @gray-darker;
         }
       }

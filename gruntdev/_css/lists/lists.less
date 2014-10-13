@@ -133,12 +133,23 @@
 //        padding:0 0;
       }
       .media-heading {
-        max-width: 80%;
-        margin-top:@gap;
-        margin-bottom:0;
-        @media (min-width: @screen-sm-max) {
-          margin-bottom:@gap;
+        padding: 0;
+        margin: 0;
+        padding: 0;
+        margin: @gap 0;
+        font-weight: normal;
+        font-size: @brsize;
+        //  line-height: 1;
+        span {
+          border-bottom: 1px solid @gray-darker;
+          padding-bottom: @gap/4;
+          //    line-height: 1;
         }
+
+        //      margin-bottom:0;
+//        @media (min-width: @screen-sm-max) {
+//          margin-bottom:@gap;
+//        }
       }
       @media(min-width:@screen-sm){
         padding-right:@gap*3;
@@ -148,6 +159,9 @@
 }
 
 .press-list {
+  li{.row{
+    @media(max-width:@screen-xs){margin-bottom:@padl;}
+  }}
   .content {
     font-size:12px;
       a {

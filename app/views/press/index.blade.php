@@ -19,7 +19,9 @@
 <?php
 $publication->load('pub_holder');
 ?>
-<div class="row"><div class="col-sm-4">{{$magazine->title}} №{{$publication->number}} / {{$publication->year}} </div><div class="col-sm-8"><a href="{{asset('portfolio/'.$publication->pub_holder->alias)}}">{{$publication->pub_holder->title}}</a></div></div>
+<div class="row">
+    <div class="col-xs-5 col-sm-2 col-md-3 col-lg-2">{{$magazine->title}}</div><div class="col-xs-2 col-sm-1">№{{$publication->number}}</div><div class="col-xs-2 col-sm-1">{{$publication->year}}</div>
+    <div class="col-xs-12 col-sm-8 col-md-7"><a href="{{asset('portfolio/'.$publication->pub_holder->alias)}}">{{$publication->pub_holder->title}}</a></div></div>
 </li>
 @endforeach
 </ul>
