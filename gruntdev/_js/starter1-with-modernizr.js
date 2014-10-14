@@ -926,9 +926,10 @@ yepnope([
 //                        $("#body-bg").css('background-image', 'none');
 //                    });
 
-                    $(".century").on('click',function(e){
+                    $("nav>.menu li:last-child a").on('click',function(e){
                         e.preventDefault();
-                        $("*").css("font-family","Century Gothic");
+                        console.log("GGGG");
+                        $("body").toggleClass("gothic");
                     })
 
                     $('a[href*=#]:not([href=#])').click(function () {
