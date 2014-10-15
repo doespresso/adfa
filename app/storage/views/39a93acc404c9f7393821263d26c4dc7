@@ -419,11 +419,11 @@
         </div>
         </div>
     <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="content">
-        <address><?php echo Config::get('site.address');; ?></address>
-        <phone><?php echo Config::get('site.phone');; ?></phone>
-        <mail><?php echo Config::get('site.e-mail');; ?></mail>
-        </div>
+<!--        <div class="content">-->
+<!--        <address><?php echo Config::get('site.address');; ?></address>-->
+<!--        <phone><?php echo Config::get('site.phone');; ?></phone>-->
+<!--        <mail><?php echo Config::get('site.e-mail');; ?></mail>-->
+<!--        </div>-->
     </div>
 </div>
 <?php echo $__env->make('partial.subfooter-index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

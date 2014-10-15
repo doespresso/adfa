@@ -8,4 +8,8 @@
        <?php if(!empty($pr->publication->first()->number)): ?><div class="pnumber"><span class="number">№<?php echo $pr->publication->first()->number; ?></span> <span class="year"><?php echo $pr->publication->first()->year; ?></span></div><?php endif; ?>
     <?php endif; ?>
 </div>
+<?php else: ?>
+<div class="publicated texted content">
+    <div class="plabel">готовится к публикации в профильном издании</div>
+</div>
 <?php endif; ?>

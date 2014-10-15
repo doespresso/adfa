@@ -3,6 +3,9 @@
     <div class="spotlight" id="presentation">
         <div class="swiper-container l-arrows" id="main-swiper">
             <div class="swiper-wrapper">
+                <?php
+                $ids=[]
+                ;?>
                 <?php foreach($slides as $slide): ?>
                 <?php
                 $obj = get_class($slide->holder);
@@ -14,7 +17,9 @@
                     $holder = Post::random()->active()->first();
                 }
                 if ($slide->israndom && $slide->holder_type == 'Portfolio'){
-                    $holder = Portfolio::random()->active()->first();
+                    $holder = Portfolio::random()->active()->whereNotIn('id',array(1,2))->first();
+                    $ids[]=$holder->id;
+                    Debugbar::info($ids);
                 }
                 ?>
 

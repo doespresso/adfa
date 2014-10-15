@@ -71,11 +71,7 @@ yepnope([
 //                        $("#body-bg").css('background-image', 'none');
 //                    });
 
-                    $("nav>.menu li:last-child a").on('click',function(e){
-                        e.preventDefault();
-                        console.log("GGGG");
-                        $("body").toggleClass("gothic");
-                    })
+
 
                     $('a[href*=#]:not([href=#])').click(function () {
                         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -266,7 +262,7 @@ yepnope([
 
                 setTimeout(function () {
                     $("#main-loader").addClass("removed");
-                }, 1000);
+                }, 1500);
 
 //                function fader(el) {
 //                    el.fadeIn(100);
