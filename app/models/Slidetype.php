@@ -2,7 +2,7 @@
 
 class Slidetype extends \Eloquent {
 
-    protected $table = 'Slidetypes';
+    protected $table = 'slidetypes';
 
     public static function boot()
     {

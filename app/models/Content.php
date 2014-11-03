@@ -1,7 +1,7 @@
 <?php
 
 class Content extends \Eloquent {
-    protected $table = 'Contents';
+    protected $table = 'contents';
 
     public static function boot()
     {

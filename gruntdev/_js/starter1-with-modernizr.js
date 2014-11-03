@@ -917,6 +917,16 @@ yepnope([
 //                        },300);
 //                }, 10);
 
+                $(function() {
+                    $('a').bind('click', function(event) {
+                        var $anchor = $(this);
+                        $('html, body').stop().animate({
+                            scrollTop: $($anchor.attr('href')).offset().top
+                        }, 500);
+                        event.preventDefault();
+                    });
+                });
+
                 $(function () {
 
 //                    $(".no-touch a[attr-bgorig]").on("mouseenter",function(){
@@ -926,6 +936,26 @@ yepnope([
 //                        $("#body-bg").css('background-image', 'none');
 //                    });
 
+
+//                    var tpt = $('#top-panel').offset().top + $('#top-panel').height();
+                    var scrollTimeout;
+                    var lastoffset = 0;
+                    $(window).scroll(function () {
+                        if (scrollTimeout) {
+                            clearTimeout(scrollTimeout);
+                            scrollTimeout = null;
+                        }
+                        scrollTimeout = setTimeout(scrollHandler, 0);
+                    });
+
+                    scrollHandler = function () {
+                        var thisoffset = $(window).scrollTop();
+                        if (thisoffset >= 640) {
+                            $("body:not(.toup)").addClass("toup");
+                        } else {
+                            $("body.toup").removeClass("toup");
+                        }
+                    };
 
 
                     $('a[href*=#]:not([href=#])').click(function () {
@@ -1066,6 +1096,10 @@ yepnope([
                         },
                         onLoadEnd: function () {
                             activityIndicatorOff();
+                            console.log("END");
+                            setTimeout($("#imagelightbox").css('-webkit-transform', ''),1500);
+
+
                         },
                         onEnd: function () {
                             activityIndicatorOff();
@@ -1282,27 +1316,7 @@ yepnope([
                         onFirstInit: function (swiper) {
                             console.log("first init wide");
                         },
-//
-//                        onProgressChange: function (swiper) {
-//                            for (var i = 0; i < swiper.slides.length; i++) {
-//                                var slide = swiper.slides[i];
-//                                var progress = slide.progress;
-//                                var translate = progress * swiper.width;
-//                                var opacity = 1 - Math.min(Math.abs(progress), 1);
-//                                slide.style.opacity = opacity;
-//                                swiper.setTransform(slide, 'translate3d(' + translate + 'px,0,0)');
-//                            }
-//                        },
-//                        onTouchStart: function (swiper, speed) {
-//                            for (var i = 0; i < swiper.slides.length; i++) {
-//                                swiper.setTransition(swiper.slides[i], 0);
-//                            }
-//                        },
-//                        onSetWrapperTransition: function (swiper, speed) {
-//                            for (var i = 0; i < swiper.slides.length; i++) {
-//                                swiper.setTransition(swiper.slides[i], speed);
-//                            }
-//                        },
+
                     });
                     $("#presentation-next").on("click", function () {
                         presentation.swipeNext();
@@ -1316,10 +1330,7 @@ yepnope([
 
             },
 
-//            'swiper_progress': function (url, result, key) {
-//
-//
-//            },
+
         }
     }
 ]

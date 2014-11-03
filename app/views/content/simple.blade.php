@@ -1,6 +1,6 @@
 @extends('layouts.page')
 @section('page-content')
-<div class="row" id="static-page-title"></div>
+<div class="row" id="static-page-title" name="pagetop"></div>
 
 <div class="row" id="page-subheader">
     <div class="col-lg-5 col-md-5 col-sm-12 col-md-offset-4 col-xs-12">

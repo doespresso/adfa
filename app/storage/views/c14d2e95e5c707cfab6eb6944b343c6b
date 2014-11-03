@@ -42,8 +42,6 @@
 
 <?php echo $__env->make('partial.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-<div id="bg-home">
-
-</div>
+<div id="bg-home"></div>
 </body>
 </html>

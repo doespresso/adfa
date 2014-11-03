@@ -42,8 +42,6 @@
 
 @include('partial.footer')
 
-<div id="bg-home">
-
-</div>
+<div id="bg-home"></div>
 </body>
 </html>

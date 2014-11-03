@@ -4,9 +4,9 @@
         <div class="swiper-container l-arrows" id="main-swiper">
             <div class="swiper-wrapper">
                 <?php
-                $ids=[]
+                $ids=[0]
                 ;?>
-                @foreach($slides as $slide)
+                @foreach($slides as $index => $slide)
                 <?php
                 $obj = get_class($slide->holder);
                 $holder = $slide->holder;
@@ -17,7 +17,7 @@
                     $holder = Post::random()->active()->first();
                 }
                 if ($slide->israndom && $slide->holder_type == 'Portfolio'){
-                    $holder = Portfolio::random()->active()->whereNotIn('id',array(1,2))->first();
+                    $holder = Portfolio::random()->active()->whereNotIn('id',$ids)->first();
                     $ids[]=$holder->id;
                     Debugbar::info($ids);
                 }

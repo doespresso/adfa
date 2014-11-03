@@ -5,7 +5,7 @@
             @foreach ($photos as $index => $photo)
             <div class="swiper-slide">
                 <div class="slide-wrapper">
-                    <a class="img zoomlink" rel="imagelightbox" href="{{asset($photo->img_big)}}" data-src="{{asset($photo->img_big)}}" style="background-image:url({{asset($photo->img_big)}})"></a>
+                    <a class="img zoomlink" rel="imagelightbox" href="{{asset($photo->img_orig)}}" data-src="{{asset($photo->img_orig)}}" style="background-image:url({{asset($photo->img_big)}})"></a>
                 </div>
             </div>
             @endforeach
