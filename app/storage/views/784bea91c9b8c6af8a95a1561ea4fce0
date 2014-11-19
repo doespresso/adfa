@@ -1,0 +1,30 @@
+<?php $__env->startSection('slider'); ?>
+
+<div class="container">
+
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<div class="row">
+    <div class="col-md-3">
+        <img class="person" src="<?php echo asset($person->img); ?>">
+    </div>
+    <div class="col-md-6 col-md-offset-1">
+        <div class="content">
+            <h1><?php echo $person->title; ?></h1>
+            <?php if(!empty($person->quote)): ?><blockquote class="personal"><?php echo $person->quote; ?> ...</blockquotes><?php endif; ?>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 col-sm-12">
+        <div class="post-content">
+            <div class="content personal-text">
+                <?php if(!empty($person->quotetext)): ?><?php echo $person->quotetext; ?><?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('content.simple', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

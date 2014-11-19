@@ -14,7 +14,7 @@
     <div class="row item">
         @if(true)
         <div class="thumb col-md-6">
-            <a href="{{asset('')}}{{Request::segment(1)}}/{{$post->alias}}"><img src="{{$post->photos()->orderBy('sort')->first()->img_orig}}" title="{{$post->title}}"/></a>
+            <a href="{{asset('')}}{{Request::segment(1)}}/{{$post->alias}}"><img src="{{$post->photos()->orderBy('sort')->first()->img_medium}}" title="{{$post->title}}"/></a>
         </div>
         @endif
         <div class="col-md-5 col-md-offset-1">

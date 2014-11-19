@@ -103,18 +103,18 @@ Photo::saving(function ($model) {
             $constraint->aspectRatio();
             $constraint->upsize();
         })->sharpen(2)->encode(null, 100)->save(public_path($newname . '_medium.jpg'));
-        $img_small = Image::make($model->img_orig)->resize(600, null, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        })->sharpen(4)->encode(null, 100)->save(public_path($newname . '_small.jpg'));
-        $img_thumb = Image::make($model->img_orig)->resize(400, null, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        })->sharpen(5)->encode(null, 100)->save(public_path($newname . '_thumb.jpg'));
+//        $img_small = Image::make($model->img_orig)->resize(600, null, function ($constraint) {
+//            $constraint->aspectRatio();
+//            $constraint->upsize();
+//        })->sharpen(4)->encode(null, 100)->save(public_path($newname . '_small.jpg'));
+//        $img_thumb = Image::make($model->img_orig)->resize(400, null, function ($constraint) {
+//            $constraint->aspectRatio();
+//            $constraint->upsize();
+//        })->sharpen(5)->encode(null, 100)->save(public_path($newname . '_thumb.jpg'));
         $model->img_big = $newname . '_big.jpg';
         $model->img_medium = $newname . '_medium.jpg';
-        $model->img_small = $newname . '_small.jpg';
-        $model->img_thumb = $newname . '_thumb.jpg';
+//        $model->img_small = $newname . '_small.jpg';
+//        $model->img_thumb = $newname . '_thumb.jpg';
     }
 });
 
@@ -126,6 +126,6 @@ Photo::deleting(function ($photo) {
     if (!empty($photo->img_orig)) File::delete($photo->img_orig);
     if (!empty($photo->img_big)) File::delete($photo->img_big);
     if (!empty($photo->img_medium)) File::delete($photo->img_medium);
-    if (!empty($photo->img_small)) File::delete($photo->img_small);
-    if (!empty($photo->img_thumb)) File::delete($photo->img_thumb);
+//    if (!empty($photo->img_small)) File::delete($photo->img_small);
+//    if (!empty($photo->img_thumb)) File::delete($photo->img_thumb);
 });
