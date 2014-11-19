@@ -1,0 +1,32 @@
+<?php $__env->startSection('page-content'); ?>
+<div class="row" id="static-page-title" name="pagetop"></div>
+
+<div class="row" id="page-subheader">
+    <div class="col-lg-5 col-md-5 col-sm-12 col-md-offset-4 col-xs-12">
+        <?php echo $__env->yieldContent('page-subheader'); ?>
+    </div>
+</div>
+
+<div id="visual">
+<?php echo $__env->yieldContent('slider'); ?>
+</div>
+
+<div class="row" id="page-content">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-md-offset-4 col-xs-12">
+        <?php echo $__env->yieldContent('content'); ?>
+    </div>
+</div>
+
+<div class="row" id="page-pager">
+    <div class="col-lg-7 col-md-8 col-sm-12 col-md-offset-4 col-xs-12">
+        <?php echo $__env->yieldContent('pager'); ?>
+    </div>
+</div>
+
+
+
+<?php echo $__env->yieldContent('designers'); ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.page', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

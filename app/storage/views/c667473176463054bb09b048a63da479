@@ -1,0 +1,11 @@
+<nav id="menu" class="hidden-xs hidden-sm">
+    <ul class="menu">
+        <?php foreach($menu_links as $link): ?>
+        <?php if(explode('/',$link->url)[1] == Request::segment(1)): ?>
+        <li><a class="active" href="<?php echo $link->url; ?>"<?php if($link->alt): ?>title="<?php echo $link->alt; ?>"<?php endif; ?>><?php echo $link->title; ?></a></li>
+        <?php else: ?>
+        <li><a href="<?php echo $link->url; ?>"<?php if($link->alt): ?>title="<?php echo $link->alt; ?>"<?php endif; ?>><?php echo $link->title; ?></a></li>
+        <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</nav>

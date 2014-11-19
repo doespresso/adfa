@@ -1850,56 +1850,56 @@ $.magnificPopup.registerModule('gallery', {
 	}
 });
 
-/*
-Touch Support that might be implemented some day
 
-addSwipeGesture: function() {
-	var startX,
-		moved,
-		multipleTouches;
+//Touch Support that might be implemented some day
 
-		return;
+//addSwipeGesture: function() {
+//	var startX,
+//		moved,
+//		multipleTouches;
+//
+//		return;
+//
+//	var namespace = '.mfp',
+//		addEventNames = function(pref, down, move, up, cancel) {
+//			mfp._tStart = pref + down + namespace;
+//			mfp._tMove = pref + move + namespace;
+//			mfp._tEnd = pref + up + namespace;
+//			mfp._tCancel = pref + cancel + namespace;
+//		};
+//
+//	if(window.navigator.msPointerEnabled) {
+//		addEventNames('MSPointer', 'Down', 'Move', 'Up', 'Cancel');
+//	} else if('ontouchstart' in window) {
+//		addEventNames('touch', 'start', 'move', 'end', 'cancel');
+//	} else {
+//		return;
+//	}
+//	_window.on(mfp._tStart, function(e) {
+//		var oE = e.originalEvent;
+//		multipleTouches = moved = false;
+//		startX = oE.pageX || oE.changedTouches[0].pageX;
+//	}).on(mfp._tMove, function(e) {
+//		if(e.originalEvent.touches.length > 1) {
+//			multipleTouches = e.originalEvent.touches.length;
+//		} else {
+//			//e.preventDefault();
+//			moved = true;
+//		}
+//	}).on(mfp._tEnd + ' ' + mfp._tCancel, function(e) {
+//		if(moved && !multipleTouches) {
+//			var oE = e.originalEvent,
+//				diff = startX - (oE.pageX || oE.changedTouches[0].pageX);
+//
+//			if(diff > 20) {
+//				mfp.next();
+//			} else if(diff < -20) {
+//				mfp.prev();
+//			}
+//		}
+//	});
+//},
 
-	var namespace = '.mfp',
-		addEventNames = function(pref, down, move, up, cancel) {
-			mfp._tStart = pref + down + namespace;
-			mfp._tMove = pref + move + namespace;
-			mfp._tEnd = pref + up + namespace;
-			mfp._tCancel = pref + cancel + namespace;
-		};
-
-	if(window.navigator.msPointerEnabled) {
-		addEventNames('MSPointer', 'Down', 'Move', 'Up', 'Cancel');
-	} else if('ontouchstart' in window) {
-		addEventNames('touch', 'start', 'move', 'end', 'cancel');
-	} else {
-		return;
-	}
-	_window.on(mfp._tStart, function(e) {
-		var oE = e.originalEvent;
-		multipleTouches = moved = false;
-		startX = oE.pageX || oE.changedTouches[0].pageX;
-	}).on(mfp._tMove, function(e) {
-		if(e.originalEvent.touches.length > 1) {
-			multipleTouches = e.originalEvent.touches.length;
-		} else {
-			//e.preventDefault();
-			moved = true;
-		}
-	}).on(mfp._tEnd + ' ' + mfp._tCancel, function(e) {
-		if(moved && !multipleTouches) {
-			var oE = e.originalEvent,
-				diff = startX - (oE.pageX || oE.changedTouches[0].pageX);
-
-			if(diff > 20) {
-				mfp.next();
-			} else if(diff < -20) {
-				mfp.prev();
-			}
-		}
-	});
-},
-*/
 
 
 /*>>gallery*/

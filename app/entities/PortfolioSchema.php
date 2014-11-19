@@ -20,8 +20,9 @@ class PortfolioSchema extends BaseSchema {
      * @var string
      */
     protected $defaultOrder = 'sort';
+    protected $perPage = 100;
     protected $filters = ['style'];
-    protected $defaults = [ 'active' => 1,'sort'=>100 ];
+    protected $defaults = [ 'active' => 1,'sort'=>100];
 
     /**
      * Define some fields.
@@ -98,6 +99,7 @@ class PortfolioSchema extends BaseSchema {
         $v->rules(
         [
             'title' => 'required',
+            'photos' => 'required',
             'style' => 'required',
         ]);
     }

@@ -20,6 +20,7 @@ class PostSchema extends BaseSchema {
      * @var string
      */
     protected $defaultOrder = null;
+    protected $perPage = 100;
 
     /**
      * Define some fields.
@@ -31,8 +32,9 @@ class PostSchema extends BaseSchema {
         $schema->increments('id');
         $schema->string('title');
         $schema->boolean('active');
-        $schema->string('preambula');
+		$schema->text('preambula')->label('Текст заметки');
         $schema->ckedit('text')->label('Текст заметки');
+		$schema->string('url')->label("url источника c БЕЗ http://");
         $schema->embed('meta', 'metas');
         $schema->embed('photos', 'photos');
         $schema->relates('person', 'persons')->label('Автор');

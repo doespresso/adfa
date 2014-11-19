@@ -56,28 +56,32 @@
     // How to define menu items: https://github.com/lazychaser/cruddy/wiki/Menu
     'menu' =>
         [
-            ['entity' => 'menus', 'label' => 'Меню'],
-            ['entity' => 'photos', 'label' => 'Фото'],
-            ['entity' => 'posts', 'label' => 'Live'],
-            ['entity' => 'metas', 'label' => 'META'],
-            ['entity' => 'magazines', 'label' => 'Журналы'],
-            ['entity' => 'publications', 'label' => 'Публикации'],
-            ['entity' => 'galleries', 'label' => 'Галереи'],
             ['entity' => 'pages', 'label' => 'Разделы сайта'],
+            ['entity' => 'menus', 'label' => 'Меню'],
+            ['entity' => 'posts', 'label' => 'Live'],
+            ['entity' => 'magazines', 'label' => 'Журналы'],
             ['entity' => 'portfolios', 'label' => 'Портфолио'],
-            ['entity' => 'cals', 'label' => 'Мероприятия'],
             ['entity' => 'persons', 'label' => 'Персоны'],
             ['entity' => 'styles', 'label' => 'Стили'],
-            ['entity' => 'slidetypes', 'label' => 'Типы'],
             ['entity' => 'slides', 'label' => 'Слайдер'],
-            ['entity' => 'contents', 'label' => 'ККК' ],
+            ['entity' => 'contents', 'label' => 'ККК'],
 
         ],
 
     // The menu that is displayed to the right of the main menu.
     'service_menu' =>
         [
-
+            [
+                'label' => 'Специальное',
+                'items' => [
+                    ['entity' => 'slidetypes', 'label' => 'Типы слайдов'],
+//                    ['entity' => 'metas', 'label' => 'META'],
+                    ['entity' => 'galleries', 'label' => 'Галереи заливка'],
+                    ['entity' => 'publications', 'label' => 'Публикации'],
+//                    ['entity' => 'photos', 'label' => 'Фото'],
+                ],
+                // Any other attributes
+            ],
         ],
 );
 
@@ -86,6 +90,6 @@ Cruddy::saving('galleries', function ($action, $model) {
     Pic::create([
         'holder_id' => 2,
         'holder_type' => 'Portfolio',
-        'url' =>'foto/int8.jpg',
+        'url' => 'foto/int8.jpg',
     ]);
 });

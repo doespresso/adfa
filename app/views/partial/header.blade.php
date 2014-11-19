@@ -1,5 +1,5 @@
 <div id="menu-opener"><figure></figure><figure></figure><figure></figure></div>
-<div class="line-top century"></div><div class="line-bottom"></div><div class="line-left"></div><div class="line-right"></div>
+<div class="line-top"></div><div class="line-bottom"></div><div class="line-left"></div><div class="line-right"></div>
 <div id="body-bg"><div id="bg-contents"><figure id="bg-logo">artdefacto</figure></div></div>
 <div class="row" id="fixed-wrapper">
     <div class="col-md-3 col-md-offset-1 col-xs-4">

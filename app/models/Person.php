@@ -14,19 +14,25 @@ class Person extends \Eloquent
         static::saving(
             function ($model) {
 
-                if($model->img_orig){
+
+                if (empty($model->alias)) {
+                    $model->alias = Mascame\Urlify::filter($model->title . "_" . str_random(2));
+                }
+
+
+                if ($model->img_orig) {
                     $holder = $model->title;
-                    if($holder){
-                        $newname = Mascame\Urlify::filter($holder).'_'.$model->id;
-                        $newname ='images/persons/'.$newname;
+                    if ($holder) {
+                        $newname = Mascame\Urlify::filter($holder) . '_' . $model->id;
+                        $newname = 'images/persons/' . $newname;
                     }
-                    $img = Image::make($model->img_orig)->fit(400, 400)->save(public_path($newname.'.jpg'));
-                    $img_small = Image::make($model->img_orig)->resize(80,null, function ($constraint) {
+                    $img = Image::make($model->img_orig)->fit(400, 400)->save(public_path($newname . '.jpg'));
+                    $img_small = Image::make($model->img_orig)->resize(80, null, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
-                    })->save(public_path($newname.'_small.jpg'));
-                    $model->img = $newname.'.jpg';
-                    $model->img_small = $newname.'_small.jpg';
+                    })->save(public_path($newname . '_small.jpg'));
+                    $model->img = $newname . '.jpg';
+                    $model->img_small = $newname . '_small.jpg';
 //                    $model->save();
                 }
 
@@ -45,8 +51,7 @@ class Person extends \Eloquent
         );
 
         static::deleted(
-            function($model)
-            {
+            function ($model) {
                 $model->content->delete();
             }
         );
@@ -66,17 +71,17 @@ class Person extends \Eloquent
 
     public function posts()
     {
-        return $this->hasMany("Post","owner_id");
+        return $this->hasMany("Post", "owner_id");
     }
 
     public function content()
     {
-        return $this->morphOne('Content','holder');
+        return $this->morphOne('Content', 'holder');
     }
 
     public function slide()
     {
-        return $this->morphOne('Slide','holder');
+        return $this->morphOne('Slide', 'holder');
     }
 
 

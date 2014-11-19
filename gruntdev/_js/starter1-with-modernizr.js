@@ -859,7 +859,8 @@ var sliding_speed = 500,
     reinittimeout,
     grid,
     gallery,
-    presentation;
+    presentation,
+    lb;
 
 //yepnope.injectCss(['dev/component/odometer/themes/odometer-theme-minimal.css']);
 
@@ -896,17 +897,16 @@ yepnope([
     {
         load: {
             'jquery': '' + '/assets/js/app/jquery.js',
-            'ipreload': '' + '/assets/js/app/ipreload.js',
-            'ilightbox': '' + '/assets/js/app/ilightbox.js',
-//            'llxt': ''+'/assets/js/app/llxt.js',
-//            'llxtbg': ''+'/assets/js/app/llxtbg.js',
+            //'lightbox': '' + '/assets/js/app/magnific-popup.js',
+            //'touchswipe': '' + '/assets/js/app/touchswipe.js',
             'shuffle': '' + '/assets/js/app/shuffle.js',
             'swiper': '' + '/assets/js/app/swiper.js',
-//            'swiper_progress': ''+'/assets/js/app/swiper-progress.js',
+            'ilightbox': '' + '/assets/js/app/ilightbox.js',
         },
         callback: {
 
             'jquery': function (url, result, key) {
+
 
 
 //                setTimeout(
@@ -918,11 +918,15 @@ yepnope([
 //                }, 10);
 
                 $(function() {
-                    $('a').bind('click', function(event) {
+                    $('#toup').on('click', function(event) {
                         var $anchor = $(this);
                         $('html, body').stop().animate({
                             scrollTop: $($anchor.attr('href')).offset().top
                         }, 500);
+                        event.preventDefault();
+                    });
+                    $('.colla').on('click touch', function(event) {
+                        $(this).addClass("opened");
                         event.preventDefault();
                     });
                 });
@@ -998,30 +1002,61 @@ yepnope([
                 });
             },
 
-//
-            'ipreload': function (url, result, key) {
-                console.log("ipreload");
-////                $('[data-src]').preload(function(){
-////                    console.log("images loaded");
-////                    setTimeout(function () {
-////                        $("#main-loader").addClass("removed");
-////                    },1000);
-////                });
-//                var im = $("body").find("[data-src]");
-//                    var preloaded = 0,
-//                    started = false;
-//
-//                $.preload(im, 1, function () {
-//                    preloaded++;
-//                    console.log($(this).data("src"));
-//                    $(this).css("background-image",'url(' + $(this).data("src") + ')');
-//                    if ((preloaded > 3 || preloaded > im.length/2) && !started) {
-//                        started = true;
-//                        console.log("GO");
+            //'touchswipe': function (url, result, key) {
+            //    console.log("touch");
+            //    $(function() {
+            //        $("div").swipe( {
+            //            //Generic swipe handler for all directions
+            //            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+            //                console.log("swipe");
+            //            },
+            //            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            //            threshold:0
+            //        });
+            //    });
+            //},
 
-//                    }
-//                });
-            },
+            //'lightbox': function (url, result, key) {
+            //    lb = $('.swiper-wrapper').magnificPopup({
+            //        removalDelay: 500,
+            //        delegate: '.zoomlink',
+            //        type: 'image',
+            //        removalDelay: 300,
+            //        mainClass: 'mfp-fade',
+            //        tClose: 'Закрыть (Esc)',
+            //        tLoading: 'загрузка...',
+            //        gallery: {
+            //            enabled:true,
+            //            tPrev: 'назад',
+            //            tNext: 'вперед',
+            //            tCounter: '%curr% / %total%'
+            //        },
+            //        callbacks: {
+            //            beforeOpen: function() {
+            //                // just a hack that adds mfp-anim class to markup
+            //                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+            //                this.st.mainClass = this.st.el.attr('data-effect');
+            //            },
+            //            open: function() {
+            //              console.log("open");
+            //                $(".mfp-figure").swipe( {
+            //                    //Generic swipe handler for all directions
+            //                    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+            //                        console.log("swipe"+direction);
+            //                        $('.swiper-wrapper').magnificPopup('next');
+            //                    },
+            //                    //Default is 75px, set to 0 for demo so any distance triggers swipe
+            //                    threshold:0
+            //                });
+            //            },
+            //        },
+            //    });
+            //},
+
+
+
+
+
 
             'ilightbox': function (url, result, key) {
 
@@ -1086,7 +1121,12 @@ yepnope([
 
 
                 $('a[rel="imagelightbox"]').imageLightbox(
-                    {
+                    {selector:       'id="imagelightbox"',   // string;
+                        allowedTypes:   'png|jpg|jpeg|gif',     // string;
+                        animationSpeed: 250,                    // integer;
+                        preloadNext:    true,                   // bool;            silently preload the next image
+                        enableKeyboard: true,                   // bool;            enable keyboard shortcuts (arrows Left/Right and Esc)
+                        quitOnEnd:      false,                  // bool;            quit after viewing the last image
                         onStart: function () {
                             overlayOn();
                             gallery.stopAutoplay();
@@ -1097,9 +1137,7 @@ yepnope([
                         onLoadEnd: function () {
                             activityIndicatorOff();
                             console.log("END");
-                            setTimeout($("#imagelightbox").css('-webkit-transform', ''),1500);
-
-
+                            //setTimeout(function(){$("#imagelightbox").css('-webkit-transform', '')},200);
                         },
                         onEnd: function () {
                             activityIndicatorOff();
@@ -1219,7 +1257,7 @@ yepnope([
                         loop: false,
                         centeredSlides: true,
                         initialSlide: 0,
-                        speed: 1000,//sliding_speed,
+                        speed: 500,//sliding_speed,
                         autoplay: 5000,
                         autoplayDisableOnInteraction: true,
                         shortSwipes: true,

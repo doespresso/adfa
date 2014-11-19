@@ -23,8 +23,10 @@
         cssTransitionTranslateX = function( element, positionX, speed )
         {
             var options = {}, prefix = cssTransitionSupport();
-            options[ prefix + 'transform' ]	 = 'translateX(' + positionX + ')';
-            options[ prefix + 'transition' ] = prefix + 'transform ' + speed + 's linear';
+            if (Modernizr.touch) {
+                options[ prefix + 'transform' ]	 = 'translateX(' + positionX + ')';
+            }
+            options[ prefix + 'transition' ] = prefix + 'transform ' + speed + 's ease-in-out';
             element.css( options );
         },
 

@@ -11,14 +11,14 @@
     @foreach($persons as $person)
     <div class="col-sm-12 col-md-11 col-lg-5">
         <div class="media m">
-            <a title="{{$person->title}}" class="media-object pull-left" href="/designers">
+            <a title="{{$person->title}}" class="media-object pull-left" href="/designers/{{$person->alias}}">
                 <figure class="photo" style="background-image:url('{{asset($person->img)}}')"></figure>
             </a>
             <div class="media-body">
-                <div class="content">
-                    <h3 class="media-heading"><span>{{$person->quote}}</span></h3>
+                <a href="/designers/{{$person->alias}}"><div class="content">
+                    <h3 class="media-heading"><span>{{$person->quote}} ...</span></h3>
                     {{$person->quotetext}}
-                </div>
+                </div></a>
             </div>
         </div>
     </div>

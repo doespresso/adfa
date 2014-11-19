@@ -1,0 +1,11 @@
+<?php if(!empty($pr->publication)): ?>
+<div class="publicated content hidden">
+    <?php if(!empty($pr->publication->first()->magazin->title)): ?>
+    <?php if(!empty($pr->publication->first()->magazin->logo_inv)): ?>
+    <img class="magazine-logo" src="<?php echo asset($pr->publication->first()->magazin->logo); ?>" alt="<?php echo $pr->publication->first()->magazin->title; ?>"/>
+    <img class="magazine-logo invert" src="<?php echo asset($pr->publication->first()->magazin->logo_inv); ?>" alt="<?php echo $pr->publication->first()->magazin->title; ?>"/>
+    <?php endif; ?>
+       <?php if(!empty($pr->publication->first()->number)): ?><p class="magazine-number"><span class="number">№<?php echo $pr->publication->first()->number; ?></span><span class="year"><?php echo $pr->publication->first()->year; ?></span></p><?php endif; ?>
+    <?php endif; ?>
+</div>
+<?php endif; ?>

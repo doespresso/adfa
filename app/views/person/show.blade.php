@@ -1,23 +1,29 @@
 @extends('content.simple')
 @section('slider')
-@if(!empty($post->img))
-<div class="row">
-    <div class="col-md-12 col-md-offset-0">
-      <figure class="post-front-img">
-          <img src="{{asset('')}}/{{$post->img}}"/>
-      </figure>
-    </div>
+
+<div class="container">
+
 </div>
-@endif
+
 @stop
 @section('content')
 <div class="row">
+    <div class="col-md-3">
+        <img class="person" src="{{asset($person->img)}}">
+    </div>
+    <div class="col-md-6 col-md-offset-1">
+        <div class="content">
+            <h1>{{$person->title}}</h1>
+            @if(!empty($person->quote))<blockquote class="personal">{{$person->quote}} ...</blockquotes>@endif
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-md-8 col-sm-12">
         <div class="post-content">
-        <div class="content">
-            @if(!empty($post->preambula))<p>{{$post->preambula}}</p>@endif
-            @if(!empty($post->text))<p>{{$post->text}}</p>@endif
-        </div>
+            <div class="content personal-text">
+                @if(!empty($person->quotetext)){{$person->quotetext}}@endif
+            </div>
         </div>
     </div>
 </div>

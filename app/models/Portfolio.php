@@ -35,7 +35,8 @@ class Portfolio extends \Eloquent
         static::deleted(
             function ($model) {
                 $model->content->delete();
-                if($model->publications) $model->publications->delete();
+                if($model->publication) $model->publication()->delete();
+                $model->photos()->delete();
             }
         );
 

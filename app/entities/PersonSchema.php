@@ -42,6 +42,7 @@ class PersonSchema extends BaseSchema {
         $schema->image('img_orig')->label("Фото");
         $schema->integer('sort');
         $schema->boolean('active');
+        $schema->string('alias');
 //        $schema->relates('content','contents');
 
         $schema->timestamps($hide = true);

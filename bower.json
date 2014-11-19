@@ -31,6 +31,8 @@
     "odometer": "~0.4.6",
     "isotope-perfectmasonry": "*",
     "shufflejs": "~2.1.2",
-    "jquery.lazyload": "~1.9.3"
+    "jquery.lazyload": "~1.9.3",
+    "swipebox": "~1.2.9",
+    "jquery-touchswipe": "~1.6.6"
   }
 }

@@ -1,0 +1,9 @@
+<div class="row hidden">
+    <?php if(isset($prev)): ?>
+    <a href="<?php echo asset(''); ?><?php echo Request::segment(1); ?>/<?php echo $prev->alias; ?>" class="prev"><?php echo $prev->title; ?></a>
+    <?php endif; ?>
+    <?php if(isset($next)): ?>
+    <a href="<?php echo asset(''); ?><?php echo Request::segment(1); ?>/<?php echo $next->alias; ?>" class="prev"><?php echo $next->title; ?></a>
+    <?php endif; ?>
+</div>
+

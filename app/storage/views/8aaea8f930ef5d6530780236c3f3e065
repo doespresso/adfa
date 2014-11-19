@@ -1,0 +1,3 @@
+<?php if(!empty($og['title'])): ?><meta property="og:title" content="<?php echo $og['title']; ?>"/><?php endif; ?>
+<?php if(!empty($og['img'])): ?><meta property="og:image" content="<?php echo asset(''); ?>/<?php echo $og['img']; ?>"/><?php endif; ?>
+<?php if(!empty($og['description'])): ?><meta property="og:description" content="<?php echo $og['description']; ?>"/><?php endif; ?>

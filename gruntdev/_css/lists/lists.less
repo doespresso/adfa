@@ -129,6 +129,39 @@
       display: block;
       clear: both;
 //      padding:0 @padl*2;
+
+      .content{
+        overflow:hidden;
+        height:240px;
+        cursor:pointer;
+        &:after{
+          content:'';
+          font-size:28px;
+          width:100%;
+          display:block;
+          position:absolute;
+          bottom:0;
+          padding-top:@padl*2;
+          color:@gray-darker;
+          background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.91) 35%, rgba(255,255,255,0.92) 42%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(35%,rgba(255,255,255,0.91)), color-stop(42%,rgba(255,255,255,0.92)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.91) 35%,rgba(255,255,255,0.92) 42%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.91) 35%,rgba(255,255,255,0.92) 42%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+          background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.91) 35%,rgba(255,255,255,0.92) 42%,rgba(255,255,255,1) 100%); /* IE10+ */
+          background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.91) 35%,rgba(255,255,255,0.92) 42%,rgba(255,255,255,1) 100%); /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+          font-weight:bold;
+        }
+
+        &.opened{
+          height:auto;
+          &:after{
+            display:none;
+          }
+        }
+      }
+
+
       @media (min-width: @screen-sm) {
         min-height: none;
 //        padding:0 0;
@@ -139,7 +172,7 @@
         padding: 0;
         margin: @gap 0;
         font-weight: normal;
-        font-size: @brsize;
+        font-size: 16px;
         //  line-height: 1;
         span {
           border-bottom: 1px solid @gray-darker;
@@ -168,5 +201,21 @@
       a {
         text-decoration: underline;
       }
+  }
+}
+
+
+img.person{
+  width:100%;
+  height:auto;
+}
+
+.personal{
+  font-size:24px;
+}
+
+.personal-text{
+  @media(min-width:@grid-float-breakpoint){
+    margin-top:@gap*2;
   }
 }

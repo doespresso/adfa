@@ -40,6 +40,7 @@ class Post extends \Eloquent {
             function($model)
             {
                 $model->content->delete();
+                $model->photos()->delete();
             }
         );
 
